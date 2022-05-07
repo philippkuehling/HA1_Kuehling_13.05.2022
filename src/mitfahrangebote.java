@@ -1,7 +1,9 @@
+
+// Philipp Kühling 994439
+
 public class mitfahrangebote {
 
-    //SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/Y hh:mm " + " Uhr");
-    //Date datum = SimpleDateFormat.parse
+
 
     private int angebotsNr =100;
     private String date;
@@ -67,18 +69,10 @@ public class mitfahrangebote {
         this.benutzer = benutzer;
     }
 
-
-
-
-
-
-  /*  public static int nextNumber () {
-    return angebotsNr+100;
-}*/
-
     @Override
     public String toString() {
-        return this.getAngebotsNr()+ " " +this.getDate() +" "+this.getStart()+ " "+this.getZiel()+ " "+this.getAnzahlPersonen()+ " "+this.getBenutzer().getId();
+        String result = "Angebots-Nr: " +this.getAngebotsNr()+ " Datum&Zeit: " +this.getDate()+ " Start: " +this.getStart()+ " Ziel: " +this.getZiel()+ " Personenkapazitaet: "+this.getAnzahlPersonen()+ " Benutzer-ID: "+this.getBenutzer().getId();
+        return result;
     }
 
 }

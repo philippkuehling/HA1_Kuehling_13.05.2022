@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
+// Philipp Kühling 994439
 
 public class buchungsverwaltung {
 
@@ -33,11 +34,13 @@ public class buchungsverwaltung {
         this.buchungsListe.clear();
 
         while(sc.hasNext()) {
+
             int buchungsNr = sc.nextInt();
             String buchungsdatum = sc.next();
             double preis = sc.nextDouble();
             int benutzerID =  sc.nextInt();
             int mitfahrangebotsNr = sc.nextInt();
+            sc.nextLine();
 
 
             buchungen buch = null;
@@ -70,7 +73,7 @@ public class buchungsverwaltung {
             buchungsFile.write(b1.getBuchungsdatum() + ";");
             buchungsFile.write(b1.getPreis() + ";");
             buchungsFile.write(b1.getBenutzer().getId()+ ";");
-            buchungsFile.write(b1.getMitfahrangebot().getAngebotsNr());
+            buchungsFile.write(b1.getMitfahrangebot().getAngebotsNr()+ ";");
             buchungsFile.write("\n");
         }
 

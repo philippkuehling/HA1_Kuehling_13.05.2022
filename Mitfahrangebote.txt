@@ -1,6 +1,7 @@
 100;Osnabrück;Hamburg;3;01.06.2022 10:00 Uhr;1;
 200;Hannover;Osnabrück;2;02.06.2022 9:00 Uhr;2;
 300;Pusemuckel;Hinterzarten;1;03.06.2022 8:00 Uhr;1;
-310;Osnabrück;Zürich;5;07.07;3;
+310;Osnabrück;Zürich;3;07.07;3;
 330;Osnabrück;Münster;6;03.05.2022/14:53;1;
 340;Osna;Hamburg;6;07-06.2000/09:09;2;
+350;Volldampf;Hause;4;07.06.2000/23:59;1;

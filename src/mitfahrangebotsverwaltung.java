@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.Scanner;
+// Philipp Kühling 994439
 
 public class mitfahrangebotsverwaltung {
     Scanner sc = new Scanner (System.in);
@@ -63,7 +64,7 @@ public class mitfahrangebotsverwaltung {
             int anzahlPersonen =  sc.nextInt();
             String date = sc.next();
             int id = sc.nextInt();  // Benutzer benutzer = ??
-            System.out.println(sc.nextLine());
+            sc.nextLine();
 
             mitfahrangebote mit = null;
 
@@ -100,15 +101,28 @@ public buchungen mitfahrAngeboteSuchen(String place, int aktuellerBenutzer) {
 
     int buchungsNr = readInt(sc, "Geben Sie die Buchungsnummer ein, die Sie buchen wollen?");
     double gebotenerPreis = readDouble(sc, "Wie viel sind Sie bereit zu zahlen?");
+
+    //Personenkapazität reduzieren
+    for (mitfahrangebote m1: mitfahrangebotsliste) {
+
+        if (buchungsNr == m1.getAngebotsNr() && m1.getAnzahlPersonen() !=0) {
+            m1.setAnzahlPersonen(m1.getAnzahlPersonen()-1);
+
+            //double newPrice = b1.getPreis()+gebotenerPreis;
+            //b1.setPreis(newPrice);  //?? nochmal angucken
+        }
+        else {
+            continue;
+        }
+    }
+
+
+
+    System.out.println(mitfahrangebotsliste.toString());
+
     LocalDateTime dateAndTime = LocalDateTime.now();
     DateTimeFormatter zeitFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy/HH:mm");
     String datumUndZeit = dateAndTime.format(zeitFormat);
-
-
-
-
-
-
 
         for (mitfahrangebote m1: mitfahrangebotsliste) {
             if(m1.getAngebotsNr() == buchungsNr) {
@@ -165,6 +179,8 @@ public void saveMitfahrangebote () {
     public void showMitfahrangebote(int benutzer_ID) {
         Iterator<mitfahrangebote> itr = mitfahrangebotsliste.iterator();
 
+
+
         System.out.println("Ihre Mitfahrangebote:");
         System.out.println("____________________\n");
 
@@ -173,7 +189,7 @@ public void saveMitfahrangebote () {
             mitfahrangebote mit = itr.next();
 
             if (mit.getBenutzer().getId() == benutzer_ID) {
-                System.out.println(mit);
+                System.out.println(mit.toString());
 
             }
         }

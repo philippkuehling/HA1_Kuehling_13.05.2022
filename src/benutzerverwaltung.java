@@ -2,6 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
+// Philipp Kühling 994439
 
 public class benutzerverwaltung {
 
@@ -160,8 +161,9 @@ public class benutzerverwaltung {
                 loginSuccess =true;
 
                 if (loginSuccess) {
-                    Benutzer ben = benutzer.get(i);  //Benutzer in Klassenvariable speichern??
-                    System.out.println("Login erfolgreich!");
+                    Benutzer ben = benutzer.get(i);
+                    System.out.println("\nGuten Tag " +ben.getVorname() + " " +ben.getNachname()+ "!");
+                    System.out.println("Ihr Login war erfolgreich!");
                     passed = false;
                     break;
                 }

@@ -2,6 +2,8 @@ import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.Scanner;
 
+// Philipp Kühling 994439
+
 public class Main {
     private static Benutzer benutzer; // Klassenvariable Benutzer Benutzer
     benutzerverwaltung benVerwaltung = new benutzerverwaltung();
@@ -23,10 +25,10 @@ public class Main {
         buchVerwaltung.readBuchungenFromFile("buchungen.txt");
 
         //3. Testweise Ausgabe von den Daten
-        System.out.println(benutzerverwaltung.getBenutzer().toString());
-        System.out.println(mitVerwaltung.getMitfahrangebotsliste().toString());// Test
-        System.out.println(buchVerwaltung.buchungsListe.toString());
-        System.out.println(benutzerverwaltung.getBenutzer().get(2));
+        //System.out.println(benutzerverwaltung.getBenutzer().toString());
+        //System.out.println(mitVerwaltung.getMitfahrangebotsliste().toString());// Test
+        //System.out.println(buchVerwaltung.buchungsListe.toString());
+        //System.out.println(benutzerverwaltung.getBenutzer().get(2));
 
         //2. Einlesen von Login-Daten
         String loginTry = readString(sc,"Wie ist ihr Login-Name?");
@@ -34,7 +36,6 @@ public class Main {
         benVerwaltung.loginVersuch(loginTry, passwordTry);  // Login-Methode aus Benutzerverwaltung
        Benutzer aktuellerBenutzer = benVerwaltung.getUserID(loginTry);
 
-       System.out.println(aktuellerBenutzer);
 
         //3. Auswahl eines Menüpunktes
 
@@ -42,7 +43,7 @@ public class Main {
 
 
         while (true) {
-            int eingabe = readInt(sc, " Bitte treffen Sie eine Auswahl: \n\n 1. Mitfahrangebot anlegen \n 2.Mitfahrangebote anzeigen \n 3.Mitfahrangebot buchen \n 4. Buchungen anzeigen \n 5. Programm beenden");
+            int eingabe = readInt(sc, "\nBitte treffen Sie eine Auswahl: \n\n 1.Mitfahrangebot anlegen \n 2.Mitfahrangebote anzeigen \n 3.Mitfahrangebot buchen \n 4.Buchungen anzeigen \n 5.Programm beenden");
             switch (eingabe) {
 
                 case 1:
@@ -58,14 +59,16 @@ public class Main {
                 case 3:
                     String place = readString(sc, "Von wo aus wollen Sie losfahren?");
 
+
                     buchungen b1 =null;
                     b1 = mitVerwaltung.mitfahrAngeboteSuchen(place, aktuellerBenutzer.getId());
                     buchVerwaltung.addBuchung(b1);
-                    System.out.println(buchVerwaltung.buchungsListe.toString());
+
                     buchVerwaltung.saveBuchungen("buchungen.txt");
+                    mitVerwaltung.saveMitfahrangebote();
                     break;
                 case 4:
-                    System.out.println("Deine Buchungen: \n");
+                    System.out.println("Deine Buchungen: ");
                     System.out.println("_______________");
 
                     for (buchungen meineBuchungen: buchVerwaltung.buchungsListe) {
