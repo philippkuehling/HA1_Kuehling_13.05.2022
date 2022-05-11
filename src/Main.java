@@ -5,7 +5,7 @@ import java.util.Scanner;
 // Philipp Kühling 994439
 
 public class Main {
-    private static Benutzer benutzer; // Klassenvariable Benutzer Benutzer
+   // private static Benutzer benutzer; // Klassenvariable Benutzer Benutzer
     benutzerverwaltung benVerwaltung = new benutzerverwaltung();
     mitfahrangebotsverwaltung mitVerwaltung = new mitfahrangebotsverwaltung();
     Scanner sc = new Scanner(System.in);
@@ -39,7 +39,6 @@ public class Main {
 
         //3. Auswahl eines Menüpunktes
 
-        // MOIN
 
 
         while (true) {
@@ -54,6 +53,9 @@ public class Main {
                     break;
                 case 2:
                     mitVerwaltung.showMitfahrangebote(aktuellerBenutzer.getId());
+                    System.out.println("Folgende Preise haben Sie bereits erzielt: ");
+                    System.out.println("__________________________________________");
+                    buchVerwaltung.getSumOfPreis(mitVerwaltung.getMitfahrangebotsliste(), aktuellerBenutzer);
 
                     break;
                 case 3:
@@ -63,7 +65,6 @@ public class Main {
                     buchungen b1 =null;
                     b1 = mitVerwaltung.mitfahrAngeboteSuchen(place, aktuellerBenutzer.getId());
                     buchVerwaltung.addBuchung(b1);
-
                     buchVerwaltung.saveBuchungen("buchungen.txt");
                     mitVerwaltung.saveMitfahrangebote();
                     break;
@@ -104,23 +105,9 @@ public class Main {
     // }
 
 
-    public void mitfahrAngeboteSuchen(String place, int aktuellerBenutzer) {
-        Iterator<mitfahrangebote> itr = mitVerwaltung.getMitfahrangebotsliste().iterator();
-        System.out.println("Ihre Gelegenheiten zum Mitfahren: ");
-        System.out.println("________________________________\n");
-
-        while (itr.hasNext()) {
-            mitfahrangebote m1 = itr.next();
-            if ( m1.getStart().equals(place) && m1.getAnzahlPersonen() != 0 && m1.getBenutzer().getId() != aktuellerBenutzer) {
-                System.out.println(m1);
-
-            }
-        }
 
 
-    }
 
-    //public void mitfahrangeboteByBuchungsNr() {
 
 
 

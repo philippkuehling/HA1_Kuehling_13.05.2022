@@ -65,7 +65,7 @@ public class buchungen {
     @Override
     public String toString() {
 
-        String result = "BuchungsNr: " +this.getBuchungsNr()+ " Buchungsdatum: "+this.getBuchungsdatum()+ " Preis: "+this.getPreis()+ " Benutzer-ID: "+this.getBenutzer().getId()+ " Mitfahrangebots-Nr: "+this.getMitfahrangebot().getAngebotsNr();
+        String result = "BuchungsNr: " +this.getBuchungsNr()+ " Buchungsdatum: "+this.getBuchungsdatum()+ " Preis: "+this.getPreis()+ " € Benutzer-ID: "+this.getBenutzer().getId()+ " Mitfahrangebots-Nr: "+this.getMitfahrangebot().getAngebotsNr();
 
         return result;
     }

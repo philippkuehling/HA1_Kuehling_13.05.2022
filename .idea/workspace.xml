@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="061083c1-1ad1-4a06-a8dc-e1a1e5e62830" name="Changes" comment="Naja mein Projekt halt">
+    <list default="true" id="061083c1-1ad1-4a06-a8dc-e1a1e5e62830" name="Changes" comment="Aenderungen 06.05&#10;Letzter Fehler: Preis anzeigen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Mitfahrangebote.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Mitfahrangebote.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buchungen.txt" beforeDir="false" afterPath="$PROJECT_DIR$/buchungen.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Benutzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Benutzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/benutzerverwaltung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/benutzerverwaltung.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/buchungen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buchungen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/buchungsverwaltung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buchungsverwaltung.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mitfahrangebote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mitfahrangebote.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mitfahrangebotsverwaltung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mitfahrangebotsverwaltung.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +35,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Philipp/Uni&quot;,
+    &quot;last_opened_file_path&quot;: &quot;Z:/Semester 2 - BIM/OOP2&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
@@ -87,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651640890456</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Aenderungen 06.05&#10;Letzter Fehler: Preis anzeigen">
+      <created>1651894543245</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1651894543245</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -103,6 +107,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Naja mein Projekt halt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Naja mein Projekt halt" />
+    <MESSAGE value="Aenderungen 06.05&#10;Letzter Fehler: Preis anzeigen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aenderungen 06.05&#10;Letzter Fehler: Preis anzeigen" />
   </component>
 </project>

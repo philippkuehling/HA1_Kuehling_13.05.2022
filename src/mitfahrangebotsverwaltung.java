@@ -9,6 +9,7 @@ import java.util.Scanner;
 // Philipp Kühling 994439
 
 public class mitfahrangebotsverwaltung {
+    double gebotenerPreis;
     Scanner sc = new Scanner (System.in);
 
     public static ArrayList<mitfahrangebote> getMitfahrangebotsliste() {
@@ -83,6 +84,7 @@ public class mitfahrangebotsverwaltung {
     }
 
 
+
 public buchungen mitfahrAngeboteSuchen(String place, int aktuellerBenutzer) {
         buchungen b1 = null;
     Iterator<mitfahrangebote> itr = mitfahrangebotsliste.iterator();
@@ -100,7 +102,7 @@ public buchungen mitfahrAngeboteSuchen(String place, int aktuellerBenutzer) {
     }
 
     int buchungsNr = readInt(sc, "Geben Sie die Buchungsnummer ein, die Sie buchen wollen?");
-    double gebotenerPreis = readDouble(sc, "Wie viel sind Sie bereit zu zahlen?");
+    gebotenerPreis = readDouble(sc, "Wie viel sind Sie bereit zu zahlen?");
 
     //Personenkapazität reduzieren
     for (mitfahrangebote m1: mitfahrangebotsliste) {
@@ -108,8 +110,6 @@ public buchungen mitfahrAngeboteSuchen(String place, int aktuellerBenutzer) {
         if (buchungsNr == m1.getAngebotsNr() && m1.getAnzahlPersonen() !=0) {
             m1.setAnzahlPersonen(m1.getAnzahlPersonen()-1);
 
-            //double newPrice = b1.getPreis()+gebotenerPreis;
-            //b1.setPreis(newPrice);  //?? nochmal angucken
         }
         else {
             continue;
@@ -190,6 +190,7 @@ public void saveMitfahrangebote () {
 
             if (mit.getBenutzer().getId() == benutzer_ID) {
                 System.out.println(mit.toString());
+
 
             }
         }

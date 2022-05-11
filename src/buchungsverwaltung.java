@@ -3,6 +3,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Locale;
 import java.util.Scanner;
 // Philipp Kühling 994439
@@ -16,6 +17,36 @@ public class buchungsverwaltung {
     public int nextID() {
 
         return buchungsListe.get(buchungsListe.size()-1).getBuchungsNr()+10;
+    }
+
+    public  double getSumOfPreis (ArrayList<mitfahrangebote> mitVerwaltungsListe, Benutzer akutellerBenutzer) {  //noch nicht fertig
+        double newPrice =0;
+        int i=0;
+
+
+
+        for (mitfahrangebote m1: mitVerwaltungsListe) {
+            newPrice = 0;
+
+
+            for (buchungen b1 : buchungsListe) {
+                i++;
+
+                if (b1.getMitfahrangebot().getAngebotsNr() == m1.getAngebotsNr() && m1.getBenutzer().getId() == akutellerBenutzer.getId()) {
+                    newPrice = newPrice + b1.getPreis();
+
+                    continue;
+                }
+
+
+            }
+            if (newPrice !=0) {
+                System.out.println("Mitfahrangebot-Nr #" + m1.getAngebotsNr() + " : " + newPrice + " Euro");
+            }
+
+        }
+        return newPrice;
+
     }
     public void readBuchungenFromFile (String fileName){
         FileReader file = null;
