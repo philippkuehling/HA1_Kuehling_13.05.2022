@@ -10,11 +10,9 @@ import java.util.Scanner;
 
 public class buchungsverwaltung {
 
-    ArrayList<buchungen> buchungsListe = new ArrayList<>();
+    static ArrayList<buchungen> buchungsListe = new ArrayList<>();
 
-
-
-    public int nextID() {
+    public static int nextID() {
 
         return buchungsListe.get(buchungsListe.size()-1).getBuchungsNr()+10;
     }
@@ -31,14 +29,11 @@ public class buchungsverwaltung {
 
             for (buchungen b1 : buchungsListe) {
                 i++;
-
                 if (b1.getMitfahrangebot().getAngebotsNr() == m1.getAngebotsNr() && m1.getBenutzer().getId() == akutellerBenutzer.getId()) {
                     newPrice = newPrice + b1.getPreis();
 
                     continue;
                 }
-
-
             }
             if (newPrice !=0) {
                 System.out.println("Mitfahrangebot-Nr #" + m1.getAngebotsNr() + " : " + newPrice + " Euro");

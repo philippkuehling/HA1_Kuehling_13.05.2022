@@ -71,7 +71,7 @@ public class mitfahrangebote {
 
     @Override
     public String toString() {
-        String result = "Angebots-Nr: " +this.getAngebotsNr()+ " Datum&Zeit: " +this.getDate()+ " Start: " +this.getStart()+ " Ziel: " +this.getZiel()+ " Personenkapazitaet: "+this.getAnzahlPersonen()+ " Benutzer-ID: "+this.getBenutzer().getId();
+        String result = "[Angebots-Nr]: " +this.getAngebotsNr()+ " [Datum&Zeit]: " +this.getDate()+ " [Start]: " +this.getStart()+ " [Ziel]: " +this.getZiel()+ " [freie Plaetze]: "+this.getAnzahlPersonen()+ " [Benutzer-ID]: "+this.getBenutzer().getId()+ "\n";
         return result;
     }
 

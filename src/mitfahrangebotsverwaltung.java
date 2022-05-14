@@ -18,6 +18,8 @@ public class mitfahrangebotsverwaltung {
 
     private static ArrayList<mitfahrangebote> mitfahrangebotsliste = new ArrayList<>();
 
+    buchungsverwaltung buchuVerwaltung = new buchungsverwaltung();
+
     public int nextID() {
 
         return mitfahrangebotsliste.get(mitfahrangebotsliste.size()-1).getAngebotsNr()+10;
@@ -83,8 +85,6 @@ public class mitfahrangebotsverwaltung {
 
     }
 
-
-
 public buchungen mitfahrAngeboteSuchen(String place, int aktuellerBenutzer) {
         buchungen b1 = null;
     Iterator<mitfahrangebote> itr = mitfahrangebotsliste.iterator();
@@ -95,9 +95,6 @@ public buchungen mitfahrAngeboteSuchen(String place, int aktuellerBenutzer) {
         mitfahrangebote m1 = itr.next();
         if ( m1.getStart().equals(place) && m1.getAnzahlPersonen() != 0 && m1.getBenutzer().getId() != aktuellerBenutzer) {
             System.out.println(m1);
-
-        } else {
-
         }
     }
 
@@ -116,17 +113,15 @@ public buchungen mitfahrAngeboteSuchen(String place, int aktuellerBenutzer) {
         }
     }
 
-
-
-    System.out.println(mitfahrangebotsliste.toString());
-
     LocalDateTime dateAndTime = LocalDateTime.now();
     DateTimeFormatter zeitFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy/HH:mm");
     String datumUndZeit = dateAndTime.format(zeitFormat);
 
+    // Buchungsobjekt erstellen, wenn Buchungs-Nr übereinstimmt
         for (mitfahrangebote m1: mitfahrangebotsliste) {
-            if(m1.getAngebotsNr() == buchungsNr) {
-                b1 = new buchungen(nextID(), datumUndZeit, gebotenerPreis, benutzerverwaltung.getBenutzerFromUserId(aktuellerBenutzer),  mitfahrangebotsverwaltung.getMitfahrangebotFromMitfahrangebotsNr(buchungsNr));
+            if(m1.getAngebotsNr() == buchungsNr  && m1.getBenutzer().getId() != aktuellerBenutzer) {
+               // buchuVerwaltung.readBuchungenFromFile("buchungen.txt");
+                b1 = new buchungen(buchungsverwaltung.nextID(), datumUndZeit, gebotenerPreis, benutzerverwaltung.getBenutzerFromUserId(aktuellerBenutzer),  mitfahrangebotsverwaltung.getMitfahrangebotFromMitfahrangebotsNr(buchungsNr));
 
             }
         }
@@ -169,11 +164,13 @@ public void saveMitfahrangebote () {
         String start = readString(sc, "Von wo aus wollen Sie starten?");
         String ziel = readString(sc, "Wohin wollen Sie fahren?");
         int angebotsNr = nextID();
-        String datumUndZeit = readString(sc, "Geben Sie Datum und Zeit ein ( Folegendes Muster muss die Eingabe haben: dd.MM.yyyy/HH:mm"); // in Klasse einbinden
-        //int benutzer_ID = benVerwaltung.getUserID(loginTry);
+        String datumUndZeit = readString(sc, "Geben Sie Datum und Zeit ein ( Folegendes Muster muss die Eingabe haben: dd.MM.yyyy/HH:mm");
         int anzahlPersonen = readInt(sc, "Wie viele Personen können mitfahren?");
 
         addMitfahrangebot(new mitfahrangebote(angebotsNr, start, ziel, anzahlPersonen, datumUndZeit, benutzer));
+        System.out.println("Andere Nutzer können nun folgendes Mitfahrangebot von Ihnen sehen: ");
+        System.out.println("__________________________________________________________________");
+        System.out.println(mitfahrangebotsliste.get(mitfahrangebotsliste.size()-1).toString());
     }
 
     public void showMitfahrangebote(int benutzer_ID) {

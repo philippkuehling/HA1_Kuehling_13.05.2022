@@ -5,10 +5,6 @@ import java.util.Scanner;
 // Philipp Kühling 994439
 
 public class Main {
-   // private static Benutzer benutzer; // Klassenvariable Benutzer Benutzer
-    benutzerverwaltung benVerwaltung = new benutzerverwaltung();
-    mitfahrangebotsverwaltung mitVerwaltung = new mitfahrangebotsverwaltung();
-    Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
 
@@ -20,15 +16,10 @@ public class Main {
         buchungsverwaltung buchVerwaltung = new buchungsverwaltung();
 
         //2. Benutzer aus der persistenten Text-Datei lesen
-        benVerwaltung.readBenutzerFromFile("benutzer.txt");  // funktioniert!
+        benVerwaltung.readBenutzerFromFile("benutzer.txt");
         mitVerwaltung.readMitfahrangeboteFromFile("Mitfahrangebote.txt");
         buchVerwaltung.readBuchungenFromFile("buchungen.txt");
 
-        //3. Testweise Ausgabe von den Daten
-        //System.out.println(benutzerverwaltung.getBenutzer().toString());
-        //System.out.println(mitVerwaltung.getMitfahrangebotsliste().toString());// Test
-        //System.out.println(buchVerwaltung.buchungsListe.toString());
-        //System.out.println(benutzerverwaltung.getBenutzer().get(2));
 
         //2. Einlesen von Login-Daten
         String loginTry = readString(sc,"Wie ist ihr Login-Name?");
@@ -39,18 +30,17 @@ public class Main {
 
         //3. Auswahl eines Menüpunktes
 
-
-
         while (true) {
             int eingabe = readInt(sc, "\nBitte treffen Sie eine Auswahl: \n\n 1.Mitfahrangebot anlegen \n 2.Mitfahrangebote anzeigen \n 3.Mitfahrangebot buchen \n 4.Buchungen anzeigen \n 5.Programm beenden");
             switch (eingabe) {
 
+                //Mitfahrangebot anlegen
                 case 1:
                     mitVerwaltung.createMitfahrangebot(loginTry, aktuellerBenutzer);
-                    System.out.println(mitVerwaltung.getMitfahrangebotsliste());
                     mitVerwaltung.saveMitfahrangebote();
 
                     break;
+                    // Anzeigen Mitfahrangebote inkl. Preisausgabe
                 case 2:
                     mitVerwaltung.showMitfahrangebote(aktuellerBenutzer.getId());
                     System.out.println("Folgende Preise haben Sie bereits erzielt: ");
@@ -58,6 +48,7 @@ public class Main {
                     buchVerwaltung.getSumOfPreis(mitVerwaltung.getMitfahrangebotsliste(), aktuellerBenutzer);
 
                     break;
+                    // MFA buchen
                 case 3:
                     String place = readString(sc, "Von wo aus wollen Sie losfahren?");
 
@@ -68,6 +59,7 @@ public class Main {
                     buchVerwaltung.saveBuchungen("buchungen.txt");
                     mitVerwaltung.saveMitfahrangebote();
                     break;
+                    // Buchungen anzeigen
                 case 4:
                     System.out.println("Deine Buchungen: ");
                     System.out.println("_______________");
@@ -80,6 +72,7 @@ public class Main {
                         }
                     }
                     break;
+                    // Programm beenden
                 case 5:
                     System.err.println("Das Programm wird beendet.....");
                     System.exit(0);
@@ -88,36 +81,6 @@ public class Main {
             }
         }
      }
-
-    // public mitfahrangebote createMitfahrangebot () {
-
-        String start = readString(sc, "Von wo aus fahren Sie los?");
-        String ziel = readString(sc, "Wo fahren Sie hin?");
-        int anzahlPersonen = readInt(sc, "Wie viele Plätze haben Sie noch im Auto?");
-
-
-        //mitfahrangebote mitfahrangebot = new mitfahrangebote(angebotsNr, date, start, ziel, anzahlPersonen, id);
-
-       // mitVerwaltung.mitfahrangebotsliste.add(mitfahrangebot);
-       //  System.out.println(mit);
-
-       // return mitfahrangebot;
-    // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //}
 
      public static String readString(Scanner eingabe, String hinweis) {
         boolean fehlerhaft = true;

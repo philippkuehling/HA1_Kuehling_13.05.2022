@@ -13,10 +13,6 @@ public class benutzerverwaltung {
 
     private static ArrayList<Benutzer> benutzer = new ArrayList<Benutzer>();
 
-    public benutzerverwaltung() {
-
-    }
-
     public static Benutzer getBenutzerFromUserId(int id) {
 
         for (Benutzer b21: benutzer ) {
@@ -27,10 +23,6 @@ public class benutzerverwaltung {
         }
         return null;
     }
-
-
-
-
 
     public void readBenutzerFromFile (String fileName){
 
@@ -72,7 +64,7 @@ public class benutzerverwaltung {
 
    }
 
-   public void writeBenutzerToFile() {  // evtl. doch ObjectOutput bzw.InputStream
+   public void writeBenutzerToFile() {
        PrintWriter benutzerFile =null;
 
        try {
@@ -147,16 +139,13 @@ public class benutzerverwaltung {
 
    }
 
-   public void loadBenutzer() {
-
-   }
 
    boolean loginVersuch (String login, String password) {
         boolean loginSuccess = false;
         boolean passed = false;
-        for (int i =0; i<benutzer.size(); i++) {  /// 3-mal Liste durchgehen
+        for (int i =0; i<benutzer.size(); i++) {
 
-            if (benutzer.get(i).getLogin().equals(login)&& benutzer.get(i).getPassword().equals(password)) { // jedes mal nach diesen Elementen prüfen
+            if (benutzer.get(i).getLogin().equals(login)&& benutzer.get(i).getPassword().equals(password)) {
 
                 loginSuccess =true;
 
@@ -167,14 +156,7 @@ public class benutzerverwaltung {
                     passed = false;
                     break;
                 }
-
-
-            } else
-            {
-
-
             }
-
         }
 
         if (!loginSuccess) {
@@ -191,16 +173,7 @@ public class benutzerverwaltung {
             }
         }
 
-
        return false;
    }
-
-
-
-
-
-   // nur Mitfahrangebote über Konsolenausgabe, sonst Testklassen
-
-
 
 }

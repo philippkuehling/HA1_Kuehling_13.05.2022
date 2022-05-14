@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="HA1_Kuehling_03.05.2022" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="061083c1-1ad1-4a06-a8dc-e1a1e5e62830" name="Changes" comment="Aenderungen 06.05&#10;Letzter Fehler: Preis anzeigen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HA1_Kuehling_03.05.2022.iml" beforeDir="false" afterPath="$PROJECT_DIR$/HA1_Kuehling_03.05.2022.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Mitfahrangebote.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Mitfahrangebote.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/buchungen.txt" beforeDir="false" afterPath="$PROJECT_DIR$/buchungen.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/buchungen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buchungen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/benutzerverwaltung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/benutzerverwaltung.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/buchungsverwaltung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/buchungsverwaltung.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mitfahrangebote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mitfahrangebote.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mitfahrangebotsverwaltung.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mitfahrangebotsverwaltung.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,17 +37,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;Z:/Semester 2 - BIM/OOP2&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\phili\IdeaProjects\HA1_Kuehling_03.05.2022" />
@@ -104,6 +106,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Naja mein Projekt halt" />
